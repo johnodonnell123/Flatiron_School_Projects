@@ -37,12 +37,12 @@ The data is then grouped by genre and writers to uncover trends within the data.
 ### Twentieth Century Fox appears to do a better job of generating revenue for a given budget than Warner Brothers 
 ##### (showing ols best fit line)
 
-<img src="/images/Budget vs Revenue by Studio Scatter Plot.PNG?raw=true" width="75%" height="75%">
+<img src="images/Budget vs Revenue by Studio Scatter Plot.PNG?raw=true" width="75%" height="75%">
 
  
 ### Animation, Adventure, and Family are the genres with the most favorable distributions of Revenue:
 
- <img src="/images/Revenue by Genre Box Plot.PNG?raw=true" width="75%" height="75%">
+ <img src="images/Revenue by Genre Box Plot.PNG?raw=true" width="75%" height="75%">
  
  ## Recommendations:
  1) For the desired gross revenue, choosing an appropriate budget is important. Our revenue target should be within the IQR of the revenues observed given our budget. 
