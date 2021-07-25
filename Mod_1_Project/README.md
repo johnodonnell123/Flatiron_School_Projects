@@ -32,7 +32,7 @@ The data is then grouped by genre and writers to uncover trends within the data.
 
 ### Larger Budgets show a positive correlation with gross revenue:
 
- <img src="/images/Budget vs Revenue Box Plot.PNG?raw=true" width="75%" height="75%">
+ <img src="images/Budget vs Revenue Box Plot.PNG?raw=true" width="75%" height="75%">
  
 ### Twentieth Century Fox appears to do a better job of generating revenue for a given budget than Warner Brothers 
 ##### (showing ols best fit line)
