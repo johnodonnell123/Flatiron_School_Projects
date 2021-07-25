@@ -38,7 +38,7 @@ Fortunately this data set was very tidy and did not require any cleaning whatsoe
 - This could be due to differences in user demographics, or it might be the result of the *quality and or configuration of the service in that state*. 
 - Further work is warranted here in data gathering
 
- <img src="/images/churn_rate_by_state.PNG?raw=true" width="50%" height="50%">
+ <img src="images/churn_rate_by_state.PNG?raw=true" width="50%" height="50%">
 
 ## Model Findings:
  
@@ -47,30 +47,30 @@ Fortunately this data set was very tidy and did not require any cleaning whatsoe
 - The top left hand corner represents the accuracy of the models prediction for users that **actually did not churn**, and it is very high
 - The bottom right corner represents the accuracy of the models prediction for user that **actually did churn**. While it is still high, it has room for improvement
 
-<img src="/images/confusion_matrix.PNG?raw=true" width="35%" height="35%">
+<img src="images/confusion_matrix.PNG?raw=true" width="35%" height="35%">
 
 ### The variables that explained the most variance in churn were total charge, number of customer service calls, and total day charge:
  
- <img src="/images/feature_importances.PNG?raw=true" width="75%" height="75%">
+ <img src="images/feature_importances.PNG?raw=true" width="75%" height="75%">
 
 ### The feature that explained the most variance was the total amount the customer was charged:
 - Here we see two histograms (one for churn, one for no churn) for an enngineered feature totalling the day/evening/night charges
 - There appears to be a threshold at ~ $75 at which once crossed we see many more customers churn 
 
- <img src="/images/total_charge_vs_churn.PNG?raw=true" width="75%" height="75%">
+ <img src="images/total_charge_vs_churn.PNG?raw=true" width="75%" height="75%">
  
  ### The feature that explained the second most variance was the total number of customer service calls. 
  - This is intuitive, as more service calls likely means a poorer UX and therefore a high risk of churn
  - It is very rare to see a retained customer make more than 3 service calls, however many of the customers that have churned have made > 3 calls
 
- <img src="/images/customer_service_calls_vs_churn.PNG?raw=true" width="75%" height="75%">
+ <img src="images/customer_service_calls_vs_churn.PNG?raw=true" width="75%" height="75%">
  
 ### Using both total charge and the number of customer service calls, we can limit our dataset to more clearly separate out these populations. 
 - Here we are seeing distributions for total charge *for customers that placed at least 3 service calls*
 - The combination of charging a frustrated customer too much creates a very high probability of customer churn
 - Understanding this relationship allows the provider to take action on these customers that are at risk
 
-<img src="/images/total_charge_and_customer_service_calls_vs_churn.PNG?raw=true" width="75%" height="75%">
+<img src="images/total_charge_and_customer_service_calls_vs_churn.PNG?raw=true" width="75%" height="75%">
 
 
 
