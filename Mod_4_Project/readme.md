@@ -78,7 +78,7 @@ The data comes in 3 different csvs:
 - Many of our ratings are between 3 and 4, with 3.5 being the median
 - There is a significant negative skew to the data
 - Most of the ratings are whole numbers
- <img src="images/distribution_of_ratings.PNG?raw=true" width="50%" height="50%">
+ <img src="images/distribution_of_ratings.PNG?raw=true" width="80%" height="80%">
 
 ### Highest Rated Genres:
 - The genres with the most favorable distributions are:
@@ -87,13 +87,13 @@ The data comes in 3 different csvs:
      - Animation, IMAX, and Western
 - The rest of the genres look very similar
 - Horror and movies without a genre have the widest range of outcomes
-<img src="images/genre_ratings.PNG?raw=true" width="50%" height="50%">
+<img src="images/genre_ratings.PNG?raw=true" width="80%" height="80%">
 
 ### Positively Trending:
 - Many of our ratings are between 3 and 4, with 3.5 being the median
 - There is a significant negative skew to the data
 - Most of the ratings are whole numbers
- <img src="images/trending_movies.PNG?raw=true" width="50%" height="50%">
+ <img src="images/trending_movies.PNG?raw=true" width="80%" height="80%">
 
 
 
