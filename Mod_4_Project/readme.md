@@ -93,7 +93,7 @@ The data comes in 3 different csvs:
 - Many of our ratings are between 3 and 4, with 3.5 being the median
 - There is a significant negative skew to the data
 - Most of the ratings are whole numbers
- <img src="images/distribution_of_ratings.PNG?raw=true" width="50%" height="50%">
+ <img src="images/trending_movies.PNG?raw=true" width="50%" height="50%">
 
 
 
