@@ -1,14 +1,39 @@
 # Module 4 Final Project
 
 ## Introduction
-In this project, a recommender system is built for movies using data from the MovieLens dataset. There 100,000 user ratings in the dataset. A blog post reviewing diferent types of recommenation systems can be found [here](https://johnodonnell123.github.io/pages/page_blogpost_4.html). 
+In this project, an outline for a homepage is built for an online movies streaming service. For personalization, a recommender system is built with SVD for movies using data from the MovieLens dataset. The dataset contains are 100,000 user ratings for various films. A blog post reviewing diferent types of recommendation systems can be found [here](https://johnodonnell123.github.io/pages/page_blogpost_4.html). 
 
 ## Data:
-- user_id
-- state
+The data comes in 3 different csvs:
+1) user_tags.csv
+     - userId
+     - movieId
+     - tag (a string a user assigned to a movie)
+     - timestamp (when the user created the tag)
+     
+2) ratings.csv
+     - userId
+     - movieId
+     - rating 
+     - timestamp (when the rating occurred)
+
+3) title_and_genre.csv
+     - movieId
+     - title
+     - genres (string of multiple genres)
 
 ## Methodology:
-Fortunately this data set was very tidy and did not require any cleaning whatsoever, allowing the focus to remain on feature engineering, balancing, modelling, and interpretation. I began with some simple EDA looking at churn rate by state to see if there was a trend that existed. I then moved on to same very basic feature engineering. This dataset (as with all churn related datasets) was heavily unbalanced, therefore SMOTE was used to oversample the minority class. A random forest model was constructred and iteratively retrained with the least important feature being dropped until the least important feature explained at least some predefined level of varaince. This allows for not only a faster model but also a more interpretable prediction structure. After the final model was constructed, a confusion matrix was used to determine the efficacy of the model. Finally, the feature importances are viewed and a few simple statistical visualizations are created using the most important features to show how strongly they impact churn. 
+1) Data Cleaning & Organization:
+     - The first thing I wanted to do was clean and organize the data to make it more accessable. 
+     - I started with some typecasting of timestamps, and extracting the year filmed from the movie titles (as they all included one). 
+     - I cast the string of genres to a list, and ensured that all of the users tags for movies were lower case and unique to each film. 
+     - Once all of this was complete, I reorganized the data into 3 primary dataframes centered around the User, Movie, and Ratings. 
+2) Feature Engineering:
+     - For users:
+          - The number of tags and ratings created, along with the average and stdev of their ratings
+     - For movies:
+          - Number of ratings, average rating, ratings stdev
+          - "Popularity Score"
 
 ## EDA Findings:
 
