@@ -87,7 +87,7 @@ The data comes in 3 different csvs:
      - Animation, IMAX, and Western
 - The rest of the genres look very similar
 - Horror and movies without a genre have the widest range of outcomes
-- <img src="images/genre_ratings.PNG?raw=true" width="50%" height="50%">
+<img src="images/genre_ratings.PNG?raw=true" width="50%" height="50%">
 
 ### Positively Trending:
 - Many of our ratings are between 3 and 4, with 3.5 being the median
@@ -95,43 +95,6 @@ The data comes in 3 different csvs:
 - Most of the ratings are whole numbers
  <img src="images/distribution_of_ratings.PNG?raw=true" width="50%" height="50%">
 
-### Distrbution of Ratings:
-- Ratings were mean normalized, scores above the mean are additive, scores below the mean drag it down
-- Some movies are trending much stronger than others
- <img src="images/trending_movies.PNG?raw=true" width="50%" height="50%">
-
-
-## Model Findings:
- 
-### The random forest model was able to achieve > 95% accuracy:
-- Due to the imbalance of churn/no churn in the original dataset, simply guessing that no customers would churn would yield an accuracy of ~ 84%. Random forest was able to beat this random guess by ~ 10%
-- The top left hand corner represents the accuracy of the models prediction for users that **actually did not churn**, and it is very high
-- The bottom right corner represents the accuracy of the models prediction for user that **actually did churn**. While it is still high, it has room for improvement
-
-<img src="images/confusion_matrix.PNG?raw=true" width="35%" height="35%">
-
-### The variables that explained the most variance in churn were total charge, number of customer service calls, and total day charge:
- 
- <img src="images/feature_importances.PNG?raw=true" width="75%" height="75%">
-
-### The feature that explained the most variance was the total amount the customer was charged:
-- Here we see two histograms (one for churn, one for no churn) for an enngineered feature totalling the day/evening/night charges
-- There appears to be a threshold at ~ $75 at which once crossed we see many more customers churn 
-
- <img src="images/total_charge_vs_churn.PNG?raw=true" width="75%" height="75%">
- 
- ### The feature that explained the second most variance was the total number of customer service calls. 
- - This is intuitive, as more service calls likely means a poorer UX and therefore a high risk of churn
- - It is very rare to see a retained customer make more than 3 service calls, however many of the customers that have churned have made > 3 calls
-
- <img src="images/customer_service_calls_vs_churn.PNG?raw=true" width="75%" height="75%">
- 
-### Using both total charge and the number of customer service calls, we can limit our dataset to more clearly separate out these populations. 
-- Here we are seeing distributions for total charge *for customers that placed at least 3 service calls*
-- The combination of charging a frustrated customer too much creates a very high probability of customer churn
-- Understanding this relationship allows the provider to take action on these customers that are at risk
-
-<img src="images/total_charge_and_customer_service_calls_vs_churn.PNG?raw=true" width="75%" height="75%">
 
 
 
