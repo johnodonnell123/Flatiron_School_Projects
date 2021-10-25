@@ -95,6 +95,18 @@ The data comes in 3 different csvs:
 - Most of the ratings are whole numbers
  <img src="images/trending_movies.PNG?raw=true" width="80%" height="80%">
 
+## SVD Model results
+- Most of the models predictions are off by less than 2 points, with 50% of them being less then 0.5 points off. The median error is 0.07.
+- The distribution looks to have a slight negative skew, meaning the model is slightly optimistic (tends to predict higher ratings for users)
+ <img src="images/model_error.PNG?raw=true" width="80%" height="80%">
+
+## Resulting Outline
+- The resulting homepage outline look like the image below for users with >20 ratings
+     - "Recommended For You" is based off of the SVD model
+     - "Recently Added" is based off of the similarity (lowest manhattan distance) to the users most highly recommended movies
+     - All other films are the top ***n*** rated films in their category, ordered by the users predicted preference for them
+ <img src="images/homepage_outline.PNG?raw=true" width="80%" height="80%">
+
 
 
 
