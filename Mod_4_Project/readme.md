@@ -103,7 +103,7 @@ The data comes in 3 different csvs:
 ## Resulting Outline
 - The resulting homepage outline look like the image below for users with >20 ratings
      - "Recommended For You" is based off of the SVD model
-     - "Recently Added" is based off of the similarity (lowest manhattan distance) to the users most highly recommended movies
+     - "Recently Added" has movies without the minimum amount of ratings to be incorporated into the SVD model, and is based off of the similarity (closest manhattan distance) to the users most highly recommended movies
      - All other films are the top ***n*** rated films in their category, ordered by the users predicted preference for them
  <img src="images/homepage_outline.PNG?raw=true">
 
