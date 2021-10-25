@@ -98,7 +98,7 @@ The data comes in 3 different csvs:
 ## SVD Model results
 - Most of the models predictions are off by less than 2 points, with 50% of them being less then 0.5 points off. The median error is 0.07.
 - The distribution looks to have a slight negative skew, meaning the model is slightly optimistic (tends to predict higher ratings for users)
- <img src="images/model_error.PNG?raw=true" width="80%" height="80%">
+ <img src="images/model_error.PNG?raw=true" width="70%" height="70%">
 
 ## Resulting Outline
 - The resulting homepage outline look like the image below for users with >20 ratings
