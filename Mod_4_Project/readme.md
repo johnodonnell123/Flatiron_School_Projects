@@ -105,7 +105,7 @@ The data comes in 3 different csvs:
      - "Recommended For You" is based off of the SVD model
      - "Recently Added" is based off of the similarity (lowest manhattan distance) to the users most highly recommended movies
      - All other films are the top ***n*** rated films in their category, ordered by the users predicted preference for them
- <img src="images/homepage_outline.PNG?raw=true" width="80%" height="80%">
+ <img src="images/homepage_outline.PNG?raw=true">
 
 
 
