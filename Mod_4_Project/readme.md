@@ -1,7 +1,7 @@
 # Module 4 Final Project
 
 ## Introduction
-In this project, an outline for a homepage is built for an online movies streaming service. For personalization, a recommender system is built with SVD for movies using data from the MovieLens dataset. The dataset contains are 100,000 user ratings for various films. A blog post reviewing diferent types of recommendation systems can be found [here](https://johnodonnell123.github.io/pages/page_blogpost_4.html). 
+In this project, an outline for a homepage is built for an online movies streaming service. For personalization, a recommender system is built with SVD for movies using data from the MovieLens dataset. The dataset contains are 100,000 user ratings for various films.
 
 ## Data:
 The data comes in 3 different csvs:
