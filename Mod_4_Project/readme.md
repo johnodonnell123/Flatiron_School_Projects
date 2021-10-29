@@ -1,7 +1,7 @@
 # Module 4 Final Project
 
 ## Introduction
-In this project, an outline for a homepage is built for an online movies streaming service. For personalization, a recommender system is built with SVD for movies using data from the MovieLens dataset. The dataset contains are 100,000 user ratings for various films. A blog post reviewing diferent types of recommendation systems can be found [here](https://johnodonnell123.github.io/pages/page_blogpost_4.html). 
+In this project, an outline for a homepage is built for an online movies streaming service. For personalization, a recommender system is built with SVD for movies using data from the MovieLens dataset. The dataset contains are 100,000 user ratings for various films.
 
 ## Data:
 The data comes in 3 different csvs:
@@ -98,14 +98,14 @@ The data comes in 3 different csvs:
 ## SVD Model results
 - Most of the models predictions are off by less than 2 points, with 50% of them being less then 0.5 points off. The median error is 0.07.
 - The distribution looks to have a slight negative skew, meaning the model is slightly optimistic (tends to predict higher ratings for users)
- <img src="images/model_error.PNG?raw=true" width="80%" height="80%">
+ <img src="images/model_error.PNG?raw=true" width="70%" height="70%">
 
 ## Resulting Outline
 - The resulting homepage outline look like the image below for users with >20 ratings
      - "Recommended For You" is based off of the SVD model
-     - "Recently Added" is based off of the similarity (lowest manhattan distance) to the users most highly recommended movies
+     - "Recently Added" has movies without the minimum amount of ratings to be incorporated into the SVD model, and is based off of the similarity (closest manhattan distance) to the users most highly recommended movies
      - All other films are the top ***n*** rated films in their category, ordered by the users predicted preference for them
- <img src="images/homepage_outline.PNG?raw=true" width="80%" height="80%">
+ <img src="images/homepage_outline.PNG?raw=true">
 
 
 
