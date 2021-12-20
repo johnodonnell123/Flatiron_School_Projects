@@ -1,113 +1,71 @@
 # Module 5 Final Project
 
 ## Introduction
-In this project, news headlines from 2012 - 2018 are classified into different categories using NLP and neural networks.
+In this project, news headlines from 2012 - 2018 are classified into different categories using Natural Language Processing.
 
 ## Data:
-The dataset was sourced from Kaggle and has ~ 200k news headlines that are to be classified into 1 of 41 categories.
-There dataset comes in the form af a JSON file and 
+The dataset was sourced from Kaggle and has ~ 200k news headlines that are to be classified into 1 of 40 categories.
+There dataset comes in the form af a JSON file and contains the following fields:
 
-1) user_tags.csv
-     - userId
-     - movieId
-     - tag (a string a user assigned to a movie)
-     - timestamp (when the user created the tag)
-     
-2) ratings.csv
-     - userId
-     - movieId
-     - rating 
-     - timestamp (when the rating occurred)
+1) category:
+     - 40 unique entries
+     - Examples: POLITICS, TECHNOLOGY, PARENTING, WELLNESS
 
-3) title_and_genre.csv
-     - movieId
-     - title
-     - genres (string of multiple genres)
+2) headline
+3) author
+4) short_description
+5) link
 
 ## Methodology:
 
 1) Data Cleaning & Organization:
-     - The first thing I wanted to do was clean and organize the data to make it more accessable. 
-     - I started with some typecasting of timestamps, and extracting the year filmed from the movie titles (as they all included one). 
-     - I cast the string of genres to a list, and ensured that all of the users tags for movies were lower case and unique to each film. 
-     - Once all of this was complete, I reorganized the data into 3 primary dataframes centered around the User, Movie, and Ratings. 
+     - The different text fields are explored and common formatting problems are corrected
+     - All the fields are combined into a single 'text' field
 
-2) Feature Engineering:
-     - For users:
-          - The number of tags and ratings created, along with the average and stdev of their ratings
-     - For movies:
-          - Number of ratings, average rating, ratings stdev
-          - "Popularity Score" = average rating * number of ratings
-          - "Controversial Score" = ratings stdev * number of ratings
+2) EDA:
+     - Several areas are explored including:
+          - Category Prevalence (showing class imbalance)
+          - Author Prevalence (showing which authors write the most articles)
+          - Word Frequency (across all categories and within, before and after removing stop words)
 
-3) EDA:
-     - More detail can be seen below, but the takeaways were:
-          - Ratings distribution is negtaively skewed, with most ratings falling between 3 and 4
-          - Older movies (< 1980) tend to have higher ratings 
-          - The most common genres are Drama and Comedy
-          - The highest rated genres are Film Noir, War, Documentary, Crime, Drama, and Mystery
-          - Most users (in this dataset) create 20 - 170 ratings
-          - Most movies have less than 10 ratings
-          - Most user tags are unique to one movie, making them useless (unless similarity matched to other tags, not done here)
-          - There are some movies that are trends much more strongly than others
+3) Preprocessing:
+     - Need to represent the text in a way that models can understand
+          - Vectorizing (strings --> tokens --> vectors)
+     - There are many ways to represent the text
+          - Count Vectorizaiton (binary / counts)
+          - Term Frequency / Inverse Document Frequency
+          - Word Embeddings (custom vs pre-built models such as GLoVE)
+     - Stop Words
+     - Stemming & Lemmatization
+     - n-grams
 
-4) Addressing Cold Start
-     -  For new users: 
-          - Take a generalized approach and recommend:
-               - Best Movies This Year
-               - Best Movies of All Time
-               - Recently Added*
-               - Love It or Hate It (based on controversial score)
-               - Trending (based on trend in popularity)
-               - Top rated movies from the top genres
-     - For new movies:
-          - Surface them on platform as "Recently Added"*
-          - Order them by their similarity to the Best Movies of All Time
-               - Similarity = Closest manhattan distance
-
-5) Build a recommendation system with SVD:
-     - Constructed an efficient and simple 1 factor low epoch model
-     - When the users had sufficient ratings, the model was used to:
-          - Change the order of movies shown to the user in the generalized approach
-          - Create a "Recommended for You" section, listing the top movies the user should like according to the model (that they haven't seen yet)
-
-6) Synthesize into a final function:
-     - The final function create a dataframe that is a rough outline for a users homepage, and will be different for each user
+4) Modelling:
+     - Many different models are built including Naive Bayes, Logistic Regression, Random Forest, and Neural Networks across these different pre-processing schemes.
 
 ## EDA Findings:
 
-### Distrbution of Ratings:
-- Many of our ratings are between 3 and 4, with 3.5 being the median
-- There is a significant negative skew to the data
-- Most of the ratings are whole numbers
- <img src="images/distribution_of_ratings.PNG?raw=true" width="80%" height="80%">
+### Category Prevalence:
+- There is a strong class imbalance, with Politics being the most prominent category
+ <img src="images/article_categories.PNG?raw=true" width="70%" height="70%">
 
-### Highest Rated Genres:
-- The genres with the most favorable distributions are:
-     -Film-Noir, War, Documentary, Crime, Drama, and Mystery
-- 3 other genres have a notably strong negative skew with the bulk of ratings being 4s:
-     - Animation, IMAX, and Western
-- The rest of the genres look very similar
-- Horror and movies without a genre have the widest range of outcomes
-<img src="images/genre_ratings.PNG?raw=true" width="80%" height="80%">
+### Most common words in categories:
+- After stopwords were removed, the most common words in each category are explored, and appear to make sense!
+ <img src="images/common_words_in_category.PNG?raw=true" width="70%" height="70%">
 
-### Positively Trending:
-- Many of our ratings are between 3 and 4, with 3.5 being the median
-- There is a significant negative skew to the data
-- Most of the ratings are whole numbers
- <img src="images/trending_movies.PNG?raw=true" width="80%" height="80%">
+### Custom embeddings appear strong:
+- Custom word embeddings are created using the articles, and the results (while not perfect) appear to capture some of the semantic meanings
+ <img src="images/custom_embeddings.PNG?raw=true" width="70%" height="70%">
 
-## SVD Model results
-- Most of the models predictions are off by less than 2 points, with 50% of them being less then 0.5 points off. The median error is 0.07.
-- The distribution looks to have a slight negative skew, meaning the model is slightly optimistic (tends to predict higher ratings for users)
- <img src="images/model_error.PNG?raw=true" width="70%" height="70%">
+## Model Results
+- The two best models both used tri-grams without any stemming, lemmatization, or word embeddings. The best model was a neural network with an accuracy score of ~ 80%, and the second best was a Naive Bayes classifier with ~78% accuracy. The NN has stronger performance, but is not as directly interpretable as the NB classifier!
 
-## Resulting Outline
-- The resulting homepage outline look like the image below for users with >20 ratings
-     - "Recommended For You" is based off of the SVD model
-     - "Recently Added" has movies without the minimum amount of ratings to be incorporated into the SVD model, and is based off of the similarity (closest manhattan distance) to the users most highly recommended movies
-     - All other films are the top ***n*** rated films in their category, ordered by the users predicted preference for them
- <img src="images/homepage_outline.PNG?raw=true">
+### Neural Network Results:
+ <img src="images/trigrams_nn_results.PNG?raw=true" width="70%" height="70%">
+ <img src="images/nn_cr.PNG?raw=true" width="70%" height="70%">
+
+### Naive Bayes Results:
+ <img src="images/nb_cr.PNG?raw=true" width="70%" height="70%">
+
 
 
 
