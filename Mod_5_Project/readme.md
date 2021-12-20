@@ -61,10 +61,10 @@ There dataset comes in the form af a JSON file and contains the following fields
 
 ### Neural Network Results:
  <img src="images/trigrams_nn_results.PNG?raw=true" width="70%" height="70%">
- <img src="images/nn_cr.PNG?raw=true" width="50%" height="50%">
+ <img src="images/nn_cr.PNG?raw=true" width="30%" height="30%">
 
 ### Naive Bayes Results:
- <img src="images/nb_cr.PNG?raw=true" width="50%" height="50%">
+ <img src="images/nb_cr.PNG?raw=true" width="30%" height="30%">
 
 
 
