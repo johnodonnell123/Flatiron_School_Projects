@@ -66,7 +66,13 @@ There dataset comes in the form af a JSON file and contains the following fields
 ### Naive Bayes Results:
  <img src="images/nb_cr.PNG?raw=true" width="30%" height="30%">
 
-
+## Forward:
+- Modelling:
+     - The gap between training and validation accuracy in the NN points towards overfitting, and some attempts at regularization can be made.
+     - RNNs and LSTM can also be built to try to improve accuracy
+- Reframing the problem:
+     - Instead of treating these labels and categories, we could treat them as tags, assigning 2-3 to each article
+     - This will likely increase the accuracy of the predictions, and also provide more value to the user audience
 
 
 
