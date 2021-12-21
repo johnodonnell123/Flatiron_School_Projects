@@ -50,11 +50,11 @@ There dataset comes in the form af a JSON file and contains the following fields
 
 ### Most common words in categories:
 - After stopwords were removed, the most common words in each category are explored, and appear to make sense!
- <img src="images/common_words_in_category.PNG?raw=true" width="100%" height="100%">
+ <img src="images/common_words_in_category.PNG?raw=true" width="75%" height="75%">
 
 ### Custom embeddings appear strong:
 - Custom word embeddings are created using the articles, and the results (while not perfect) appear to capture some of the semantic meanings
- <img src="images/custom_embeddings.PNG?raw=true" width="70%" height="70%">
+ <img src="images/custom_embeddings.PNG?raw=true" width="100%" height="100%">
 
 ## Model Results
 - The two best models both used tri-grams without any stemming, lemmatization, or word embeddings. The best model was a neural network with an accuracy score of ~ 80%, and the second best was a Naive Bayes classifier with ~78% accuracy. The NN has stronger performance, but is not as directly interpretable as the NB classifier!
