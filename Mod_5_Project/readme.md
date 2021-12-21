@@ -50,7 +50,7 @@ There dataset comes in the form af a JSON file and contains the following fields
 
 ### Most common words in categories:
 - After stopwords were removed, the most common words in each category are explored, and appear to make sense!
- <img src="images/common_words_in_category.PNG?raw=true" width="70%" height="70%">
+ <img src="images/common_words_in_category.PNG?raw=true" width="100%" height="100%">
 
 ### Custom embeddings appear strong:
 - Custom word embeddings are created using the articles, and the results (while not perfect) appear to capture some of the semantic meanings
