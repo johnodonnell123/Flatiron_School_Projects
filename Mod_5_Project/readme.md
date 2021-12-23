@@ -58,6 +58,7 @@ There dataset comes in the form af a JSON file and contains the following fields
 
 ## Model Results
 - The two best models both used tri-grams without any stemming, lemmatization, or word embeddings. The best model was a neural network with an accuracy score of ~ 80%, and the second best was a Naive Bayes classifier with ~78% accuracy. The NN has stronger performance, but is not as directly interpretable as the NB classifier!
+- Note the gap in accuracy between the validations and test set, there is clear evidence of overfitting here, and some regularization should be attempted.
 
 ### Neural Network Results:
  <img src="images/trigrams_nn_results.PNG?raw=true" width="70%" height="70%">
