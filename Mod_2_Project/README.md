@@ -24,7 +24,7 @@ The data was provided by Flatiron School, originally sourced from Kaggle. Featur
 - Square Footage of 15 nearest neighbors (house/lot)
 
 ## Methodology:
-I began with a typical workflow in which I cleaned the data, explored it visually, performed some feature engineering, transformed/scaled values, then created a regression model. After doing this, I was curious to see how each of these steps really impacted the models prediction and inference, so I decided to turn each of these steps into functions. I then iteratively built models either omitting or changing the parameters to each function to quantify the impact of each. 
+I began by cleaning the data (duplicates, NaNs, outliers), explored it visually, performed some feature engineering, transformed/scaled values, then created a regression model. After doing this, I was curious to see how each of these steps really impacted the models prediction and inference, so I decided to turn each of these steps into functions. I then iteratively built models either omitting or changing the parameters to each function to quantify the impact of each. 
 
 ## EDA Findings:
 
