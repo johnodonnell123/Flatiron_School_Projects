@@ -1,7 +1,7 @@
 # Module 1 Final Project
 
 ## Introduction
-In this project, data for several thousand films is scraped from IMDB's website and used to generate a high level analysis. The goal is to provide some insight into the current trends of the industry.
+In this project, data for several thousand films are scraped from IMDB's website and is explored visually. The goal is to provide some insight into the current trends of the industry.
 
 A blog post about this project can be found [here](https://johnodonnell123.github.io/pages/page_blogpost_1.html)
 
